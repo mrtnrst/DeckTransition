@@ -160,7 +160,7 @@ final class DeckPresentationController: UIPresentationController, UIGestureRecog
         
         /// For a recursive modal, the `presentingView` already has rounded
         /// corners so the animation must respect that
-        roundedViewForPresentingView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        roundedViewForPresentingView.backgroundColor = UIColor.lightGray.withAlphaComponent(0)
         roundedViewForPresentingView.cornerRadius = presentingViewController.isPresentedWithDeck ? Constants.cornerRadius : 0
         containerView.insertSubview(roundedViewForPresentingView, aboveSubview: snapshotViewContainer)
         roundedViewForPresentingView.frame = initialFrame
@@ -213,7 +213,7 @@ final class DeckPresentationController: UIPresentationController, UIGestureRecog
                 self.snapshotView?.transform = transformForSnapshotView
                 self.roundedViewForPresentingView.cornerRadius = Constants.cornerRadius
                 self.roundedViewForPresentingView.transform = transformForSnapshotView
-                self.roundedViewForPresentingView.backgroundColor = UIColor.black.withAlphaComponent(1 - Constants.alphaForPresentingView)
+                self.roundedViewForPresentingView.backgroundColor = UIColor.lightGray.withAlphaComponent(1 - Constants.alphaForPresentingView)
             }, completion: { _ in
                 self.snapshotView?.transform = .identity
                 rootSnapshotView?.removeFromSuperview()
@@ -500,7 +500,7 @@ final class DeckPresentationController: UIPresentationController, UIGestureRecog
             
             let snapshotRoundedView = RoundedView()
             snapshotRoundedView.cornerRadius = Constants.cornerRadius
-            snapshotRoundedView.backgroundColor = UIColor.black.withAlphaComponent(1 - Constants.alphaForPresentingView)
+            snapshotRoundedView.backgroundColor = UIColor.lightGray.withAlphaComponent(1 - Constants.alphaForPresentingView)
             containerView.insertSubview(snapshotRoundedView, aboveSubview: snapshotView)
             snapshotRoundedView.frame = initialFrame
             snapshotRoundedView.transform = initialTransform
